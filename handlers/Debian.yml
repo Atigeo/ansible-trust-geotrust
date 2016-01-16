@@ -1,0 +1,6 @@
+---
+# handlers file for Debian
+
+- name: Update_certs
+  shell: /usr/sbin/update-ca-certificates
+  notify: restart_docker

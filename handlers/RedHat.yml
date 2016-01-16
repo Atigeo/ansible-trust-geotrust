@@ -1,0 +1,6 @@
+---
+# handlers file for RedHat
+
+- name: Update_certs
+  shell: update-ca-trust extract
+  notify: restart_docker

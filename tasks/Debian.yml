@@ -1,0 +1,10 @@
+---
+# Setup Debian to trust geotrust certs
+
+- name: Get GeoTrust Global CA - (Ubuntu)
+  get_url: url=https://knowledge.geotrust.com/library/VERISIGN/INTERNATIONAL_AFFILIATES/GeoTrust/GeoTrust_Global_CA.pem dest=/usr/local/share/ca-certificates/GeoTrustGlobalCA.crt
+  notify: Update_certs
+
+- name: Get GeoTrust SSL CA - (Ubuntu)
+  get_url: url=https://knowledge.geotrust.com/library/VERISIGN/ALL_OTHER/Cliff/TU85/GEOTRUST_CAcerts/certs/GeoTrust_SSL_CA_-_G3.cer dest=/usr/local/share/ca-certificates/GeoTrustSSLCA-G3.crt
+  notify: Update_certs                              

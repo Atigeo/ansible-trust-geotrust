@@ -1,0 +1,10 @@
+---
+# Setup RedHat to trust geotrust certs
+
+- name: Get GeoTrust Global CA - (Red Hat)
+  get_url: url=https://knowledge.geotrust.com/library/VERISIGN/INTERNATIONAL_AFFILIATES/GeoTrust/GeoTrust_Global_CA.pem dest=/etc/pki/ca-trust/source/anchors/GeoTrustGlobalCA.crt validate_certs=False
+  notify: Update_certs
+
+- name: Get GeoTrust SSL CA - (Red Hat)
+  get_url: url=https://knowledge.geotrust.com/library/VERISIGN/ALL_OTHER/Cliff/TU85/GEOTRUST_CAcerts/certs/GeoTrust_SSL_CA_-_G3.cer dest=/etc/pki/ca-trust/source/anchors/GeoTrustSSLCA-G3.crt validate_certs=False
+  notify: Update_certs 

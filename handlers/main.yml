@@ -1,0 +1,8 @@
+---
+# handlers file for trust-geotrust
+
+- include: Debian.yml
+  when: ansible_os_family == "Debian"
+
+- include: RedHat.yml
+  when: ansible_os_family == "RedHat"
